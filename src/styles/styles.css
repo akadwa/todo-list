@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr 0.5fr;
+}
+
+header {
+  font-family: "Dancing Script", cursive;
+  font-size: calc(2vw + 1.5rem);
+  font-weight: 700;
+  padding: 2.5rem 2.5rem;
+  background-color: #36454f;
+  color: #faf3dd;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+main .nav-container {
+  grid-column: 1/2;
+  font-family: "Dancing Script", cursive;
+  font-size: calc(1.25vw + 0.75rem);
+  font-weight: 500;
+  background-color: #92bcea;
+  color: #36454f;
+  padding: 1.5rem 3rem;
+}
+main .nav-container .default-todos {
+  padding-bottom: 2rem;
+}
+main .nav-container .default-todos div {
+  padding: 0.5rem;
+}
+main .nav-container .default-todos div:hover {
+  background-color: #7eaad8;
+}
+main .nav-container .collections-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 0.25rem;
+}
+main .nav-container .collections-header button {
+  padding: 0 0.25rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: calc(1vw + 0.5rem);
+  font-weight: 500;
+  color: #36454f;
+}
+main .nav-container .collection {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1.5rem;
+  font-size: calc(1.25vw + 0.75rem - 0.35rem);
+}
+main .nav-container .collection:hover {
+  background-color: #7eaad8;
+}
+main .todo-container {
+  grid-column: 2/4;
+  padding: 2.5rem 3.5rem;
+  background-color: #faf3dd;
+  color: #36454f;
+}
+main .todo-container .todo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1rem;
+  font-family: "Dancing Script", cursive;
+  font-size: calc(1.25vw + 0.75rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+main .todo-container .todo-header button {
+  padding: 0 0.25rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: calc(1vw + 0.5rem);
+  font-weight: 500;
+  color: #36454f;
+}
+main .todo-container .todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.25rem 0.75rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: calc(0.25vw + 0.8rem);
+  font-weight: 400;
+}
+main .todo-container .todo-item:hover {
+  background-color: #f2e4b4;
+}
+main .todo-container .todo-item .item-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+main .todo-container .todo-item .item-info-container input[type=checkbox] {
+  accent-color: #36454f;
+}
+main .todo-container .todo-item .item-info-container label {
+  padding-left: 0.5rem;
+}
+main .todo-container .todo-item .controller-div button {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: calc(0.25vw + 0.8rem);
+  font-weight: 400;
+  padding: 0.25rem;
+  color: #36454f;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: calc(0.5vw + 0.5rem);
+  font-weight: 400;
+  background-color: #36454f;
+  color: #faf3dd;
+}
+footer a {
+  padding-left: 0.25rem;
+  color: #faf3dd;
+}/*# sourceMappingURL=styles.css.map */

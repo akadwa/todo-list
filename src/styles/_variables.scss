@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500&display=swap');
+
+
+// Font families
+$main-font: 'Dancing Script', cursive;
+$sub-font: 'Josefin Sans', sans-serif;
+
+// Font sizes
+$header-size: calc(2vw + 1.5rem);
+$nav-item-size: calc(1.25vw + 0.75rem);
+$add-button-size: calc(1vw + 00.5rem);
+$todo-item-size: calc(0.25vw + 0.8rem);
+$footer-size: calc(0.5vw + 0.5rem);
+
+// Font weights
+$light: 300;
+$normal: 400;
+$semi-bold: 500;
+$bold: 700;
+
+// Colors
+$grey: #36454f;
+$blue: #92bcea;
+$darker-blue: #7eaad8;
+$cream: #faf3dd;
+$darker-cream: #f2e4b4;

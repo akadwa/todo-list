@@ -1,0 +1,154 @@
+@import "defaults";
+@import "variables";
+@import "mixins";
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr 0.5fr;
+
+}
+
+header {
+
+  @include font-family-size-weight($main-font, $header-size, $bold);
+  padding: 2.5rem 2.5rem;
+
+  background-color: $grey;
+  color: $cream;
+
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+
+  .nav-container {
+    grid-column: 1 / 2;
+
+    @include font-family-size-weight($main-font, $nav-item-size, $semi-bold);
+
+    background-color: $blue;
+    color: $grey;
+    padding: 1.5rem 3rem;
+
+
+    .default-todos {
+      padding-bottom: 2rem;
+
+      div {
+        padding: 0.5rem;
+
+        &:hover {
+          background-color: $darker-blue;
+        }
+      }
+    }
+
+    .collections-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding-right: 0.25rem;
+
+      button {
+        padding: 0 0.25rem;
+        @include font-family-size-weight($sub-font, $add-button-size, $semi-bold);
+        color: $grey;
+      }
+    }
+
+    .collection {
+      margin: 0.5rem 0;
+      padding: 0.5rem 1.5rem;
+
+      font-size: calc($nav-item-size - 0.35rem);
+
+      &:hover {
+        background-color: $darker-blue;
+      }
+    }
+  }
+
+  .todo-container {
+    grid-column: 2 / 4;
+    padding: 2.5rem 3.5rem;
+
+    background-color: $cream;
+    color: $grey;
+
+    .todo-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 1rem;
+
+      @include font-family-size-weight($main-font, $nav-item-size, $bold);
+      margin-bottom: 1.5rem;
+
+      button {
+        padding: 0 0.25rem;
+        @include font-family-size-weight($sub-font, $add-button-size, $semi-bold);
+        color: $grey;
+      }
+    }
+
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      padding: 0.25rem 0.75rem;
+      @include font-family-size-weight($sub-font, $todo-item-size, $normal);
+
+      &:hover {
+        background-color: $darker-cream;
+      }
+
+      .item-info-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 80%;
+
+        input[type="checkbox"] {
+          accent-color: $grey
+        }
+
+        label {
+          padding-left: 0.5rem
+        }
+      }
+
+      .controller-div {
+
+        button {
+          @include font-family-size-weight($sub-font, $todo-item-size, $normal);
+          padding: 0.25rem;
+
+          color: $grey;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include font-family-size-weight($sub-font, $footer-size, $normal);
+
+  background-color: $grey;
+  color: $cream;
+
+  a {
+    padding-left: 0.25rem;
+    color: $cream;
+  }
+}
