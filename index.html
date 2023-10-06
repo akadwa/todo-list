@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List Project</title>
+</head>
+
+<body>
+
+  <header>Today's Todo's</header>
+
+  <main>
+    <div class="nav-container">
+      <div class="default-todos">
+        <div class="all-todos">All</div>
+        <div class="today-todos">Today</div>
+        <div class="week-todos">This week</div>
+        <div class="month-todos">This month</div>
+      </div>
+
+      <div class="collections-div">
+        <div class="collections-header">Collections <button class="collection-add-button">+</button></div>
+        <div class="collection">My collection</div>
+      </div>
+    </div>
+
+    <div class="todo-container">
+      <div class="todo-header">Today <button class="todo-add-button">+</button></div>
+
+      <div class="todo-item">
+        <div class="item-info-container">
+          <div class="item-info">
+            <input type="checkbox" name="" id="todo-check">
+            <label for="todo-check">Eat</label>
+          </div>
+          <div class="date">DD/MM/YYYY</div>
+
+        </div>
+        <div class="controller-div">
+          <button id="edit-btn">Edit</button>
+          <button id="delete-btn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>Copyright &copy; 2023 <a href="https://github.com/akadwa" target="_blank">Azhar Kadwa</a></footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
