@@ -9,10 +9,24 @@ body {
   height: 100dvh;
 }
 
+button {
+  border: none;
+  text-align: center;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+}
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  transform: translateY(4px);
+}
+
 body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 5fr 0.5fr;
+  position: relative;
 }
 
 header {
@@ -45,14 +59,17 @@ main .nav-container .default-todos div {
 }
 main .nav-container .default-todos div:hover {
   background-color: #7eaad8;
+  cursor: pointer;
 }
 main .nav-container .collections-header {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding-right: 0.25rem;
 }
 main .nav-container .collections-header button {
+  margin-right: 0.25rem;
   padding: 0 0.25rem;
   font-family: "Josefin Sans", sans-serif;
   font-size: calc(1vw + 0.5rem);
@@ -61,17 +78,121 @@ main .nav-container .collections-header button {
 }
 main .nav-container .collection {
   margin: 0.5rem 0;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 0.25rem 0.5rem 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   font-size: calc(1.25vw + 0.75rem - 0.35rem);
+}
+main .nav-container .collection button {
+  margin-right: 0.25rem;
+  padding: 0 0.4rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: calc(1vw + 0.5rem);
+  font-weight: 500;
+  color: #36454f;
 }
 main .nav-container .collection:hover {
   background-color: #7eaad8;
+  cursor: pointer;
 }
 main .todo-container {
   grid-column: 2/4;
   padding: 2.5rem 3.5rem;
   background-color: #faf3dd;
   color: #36454f;
+}
+main .todo-container .modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding: 1.3rem;
+  min-height: 25%;
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  background-color: white;
+  border: 0.1rem solid #36454f;
+  border-radius: 1rem;
+  z-index: 2;
+}
+main .todo-container .modal textarea {
+  resize: none;
+}
+main .todo-container .modal input,
+main .todo-container .modal textarea,
+main .todo-container .modal select,
+main .todo-container .modal option {
+  padding: 0.5rem 0.75rem;
+  border: 0.1rem solid #ddd;
+  border-radius: 5px;
+  font-size: calc(0.5vw + 0.4rem);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: calc(0.5vw + 0.4rem);
+  font-weight: 400;
+  color: #36454f;
+}
+main .todo-container .modal label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: calc(0.5vw + 0.4rem);
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+main .todo-container .modal .modal-header {
+  font-family: "Dancing Script", cursive;
+  font-size: calc(0.8vw + 0.75rem);
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  background-color: #92bcea;
+  padding: 0.25rem 0;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+main .todo-container .modal .modal-todo-form-container,
+main .todo-container .modal .modal-collection-form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4rem 0 0.4rem 0;
+}
+main .todo-container .modal .hidden {
+  display: none;
+}
+main .todo-container .modal .modal-controller-container button {
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 0.25rem;
+  font-size: 1em;
+  margin: 0.25rem 0.5rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: calc(0.5vw + 0.4rem);
+  font-weight: 700;
+}
+main .todo-container .modal .modal-controller-container #modal-add-btn {
+  background-color: rgb(13, 148, 13);
+}
+main .todo-container .modal .modal-controller-container #modal-cancel-btn {
+  background-color: red;
+}
+main .todo-container .overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  z-index: 1;
+}
+main .todo-container .hidden {
+  display: none;
 }
 main .todo-container .todo-header {
   display: flex;
@@ -95,7 +216,7 @@ main .todo-container .todo-item {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0.25rem 0.75rem;
+  padding: 0.35rem 0.75rem;
   font-family: "Josefin Sans", sans-serif;
   font-size: calc(0.25vw + 0.8rem);
   font-weight: 400;
@@ -112,6 +233,9 @@ main .todo-container .todo-item .item-info-container {
 main .todo-container .todo-item .item-info-container input[type=checkbox] {
   accent-color: #36454f;
 }
+main .todo-container .todo-item .item-info-container input[type=checkbox]:hover {
+  cursor: pointer;
+}
 main .todo-container .todo-item .item-info-container label {
   padding-left: 0.5rem;
 }
@@ -119,8 +243,9 @@ main .todo-container .todo-item .controller-div button {
   font-family: "Josefin Sans", sans-serif;
   font-size: calc(0.25vw + 0.8rem);
   font-weight: 400;
-  padding: 0.25rem;
+  padding: 0.3rem 0.6rem;
   color: #36454f;
+  box-shadow: none;
 }
 
 footer {

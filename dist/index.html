@@ -20,14 +20,54 @@
         <div class="month-todos">This month</div>
       </div>
 
-      <div class="collections-div">
-        <div class="collections-header">Collections <button class="collection-add-button">+</button></div>
-        <div class="collection">My collection</div>
+      <div class="collections-container">
+        <div class="collections-header">Collections <button class="collection-add-btn">+</button></div>
+        <div class="collection">My collection <button class="remove-collection-btn">-</button></div>
       </div>
     </div>
 
     <div class="todo-container">
-      <div class="todo-header">Today <button class="todo-add-button">+</button></div>
+      <div class="todo-header"><span id="collection-name-display">Today</span> <button
+          class="todo-add-btn">+</button></div>
+
+      <!-- Modal -->
+      <section class="modal hidden">
+        <div class="modal-header"></div>
+
+        <!-- Collection Form -->
+        <div class="modal-collection-form-container hidden">
+          <label for="collection-name">Collection Name:</label>
+          <input type="text" name="collection-name" id="collection-name" placeholder="Places to visit" required>
+        </div>
+
+        <!-- Todo Form -->
+        <div class="modal-todo-form-container hidden">
+          <label for="todo-name">Todo Name:</label>
+          <input type="text" name="todo-name" id="todo-name" placeholder="Go to the grocery store" required>
+
+          <label for="todo-description">Description: </label>
+          <textarea name="todo-description" id="todo-description" cols="40" rows="5"
+            placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit." required></textarea>
+
+          <label for="todo-date">Date:</label>
+          <input type="date" name="todo-date" id="todo-date" required>
+
+          <label for="todo-priority">Priority:</label>
+          <select name="todo-priority" id="todo-priority" required>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+
+        <div class="modal-controller-container">
+          <button id="modal-add-btn">Add</button>
+          <button id="modal-cancel-btn">Cancel</button>
+        </div>
+      </section>
+
+      <div class="overlay hidden"></div>
+      <!-- Modal end -->
 
       <div class="todo-item">
         <div class="item-info-container">
@@ -39,6 +79,7 @@
 
         </div>
         <div class="controller-div">
+          <button id="view-btn">View</button>
           <button id="edit-btn">Edit</button>
           <button id="delete-btn">Delete</button>
         </div>
