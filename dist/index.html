@@ -22,13 +22,32 @@
 
       <div class="collections-container">
         <div class="collections-header">Collections <button class="collection-add-btn">+</button></div>
-        <div class="collection">My collection <button class="remove-collection-btn">-</button></div>
+        <div class="new-collections-container">
+          <!-- <div class="collection">My collection<button class="remove-collection-btn">-</button></div> -->
+        </div>
       </div>
     </div>
 
-    <div class="todo-container">
-      <div class="todo-header"><span id="collection-name-display">Today</span> <button
-          class="todo-add-btn">+</button></div>
+    <div class="todo-modal-container">
+      <div class="todo-header"><span id="collection-name-display">All</span> <button class="todo-add-btn">+</button>
+      </div>
+
+      <div class="todo-container">
+        <div class="todo-item">
+          <div class="item-info-container">
+            <div class="item-info">
+              <input type="checkbox" name="todo-check" id="todo-check">
+              <label for="todo-check"></label>
+            </div>
+            <div class="date"></div>
+          </div>
+          <div class="controller-div">
+            <button class="view-btn"></button>
+            <button class="edit-btn"></button>
+            <button class="delete-btn"></button>
+          </div>
+        </div>
+      </div>
 
       <!-- Modal -->
       <section class="modal hidden">
@@ -69,21 +88,22 @@
       <div class="overlay hidden"></div>
       <!-- Modal end -->
 
-      <div class="todo-item">
-        <div class="item-info-container">
-          <div class="item-info">
-            <input type="checkbox" name="" id="todo-check">
-            <label for="todo-check">Eat</label>
+      <!-- <div class="todo-container">
+        <div class="todo-item">
+          <div class="item-info-container">
+            <div class="item-info">
+              <input type="checkbox" name="todo-check" id="todo-check">
+              <label for="todo-check">Eat</label>
+            </div>
+            <div class="date">DD/MM/YYYY</div>
           </div>
-          <div class="date">DD/MM/YYYY</div>
-
+          <div class="controller-div">
+            <button class="view-btn">View</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </div>
         </div>
-        <div class="controller-div">
-          <button id="view-btn">View</button>
-          <button id="edit-btn">Edit</button>
-          <button id="delete-btn">Delete</button>
-        </div>
-      </div>
+      </div> -->
     </div>
   </main>
 

@@ -83,7 +83,7 @@ main {
     }
   }
 
-  .todo-container {
+  .todo-modal-container {
     grid-column: 2 / 4;
     padding: 2.5rem 3.5rem;
 
@@ -204,12 +204,11 @@ main {
     }
 
     .todo-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include set-flex(row, space-between, center);
       width: 100%;
 
-      padding: 0.35rem 0.75rem;
+      padding: 0.1rem 0.75rem;
+      margin: 0.25rem 0;
       @include font-family-size-weight($sub-font, $todo-item-size, $normal);
 
       &:hover {
@@ -217,9 +216,7 @@ main {
       }
 
       .item-info-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include set-flex(row, space-between, center);
 
         width: 80%;
 
@@ -232,20 +229,36 @@ main {
         }
 
         label {
-          padding-left: 0.5rem;
+          padding-left: 1rem;
+          cursor: pointer;
         }
       }
 
       .controller-div {
+        width: 20%;
+        text-align: right;
 
         button {
           @include font-family-size-weight($sub-font, $todo-item-size, $normal);
           padding: 0.3rem 0.6rem;
+          margin: 0.25rem;
 
           color: $grey;
           box-shadow: none;
         }
       }
+    }
+
+    .low {
+      border-left: 0.2rem solid green;
+    }
+
+    .medium {
+      border-left: 0.2rem solid orange;
+    }
+
+    .high {
+      border-left: 0.2rem solid red;
     }
   }
 }
